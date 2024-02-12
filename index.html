@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head> 
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Do you wanna go out with me?</h1>
+            <h1 class="header_text">Are you free tomorrow?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="sendSMS()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="changeNoText()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function sendSMS() {
+            window.location.href = "sms:7970977&body=She%20said%20yes!";
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+
+        var phrases = [
+            "Are you sure?",
+            "Do you think you would change your mind?",
+            "But I have cookies!",
+            "You're missing out on the adventure of a lifetime!",
+            "I promise it'll be fun!",
+            "But who will hold my hand?",
+            "Think about the memories we could make!",
+            "What about our potential love story?",
+            "But I already bought matching outfits!",
+            "You'll break my heart!",
+            "You're breaking my heart into a million pieces!",
+            "But I already told all my friends about us!",
+            "But who will I send cute texts to?",
+            "But who will I sing cheesy love songs with?",
+            "But who will I share my ice cream with?",
+            "But I already imagined our future together!",
+            "But I already planned our wedding!",
+            "But I already wrote our love story!",
+            "But what about our future pet names?",
+            "I hope you change your mind."
+        ];
+
+        var currentPhraseIndex = 0;
+
+        function changeNoText() {
+            var noButton = document.getElementById('noButton');
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            noButton.textContent = phrases[currentPhraseIndex];
+        }
+
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+    </script>
+</body> 
+</html>
