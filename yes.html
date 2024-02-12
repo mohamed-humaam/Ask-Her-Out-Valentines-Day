@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./yes_style.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Hurrayyyy!!</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
-            </div>
+<head>
+    <link rel="stylesheet" href="./yes_style.css">
+</head> 
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Hurrayyyy!!</h1>
         </div>
-       
-    </body> 
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+        </div>
+    </div>
+
+    <script>
+        function redirectToYesPage() {
+            setTimeout(function() {
+                sendSMS();
+            }, 3000); // 3 seconds delay
+        }
+
+        function sendSMS() {
+            window.location.href = "sms:7970977&body=She%20said%20yes!";
+        }
+
+        window.onload = redirectToYesPage; // Trigger the function when the page loads
+    </script>
+</body> 
 </html>
